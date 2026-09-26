@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Gio Madrigal, PhD · Bioinformatician</title>
+  <meta name="description" content="Bioinformatician and postdoctoral researcher at the University of Kansas. I build software to solve difficult problems in genomics and computational biology.">
+
+  <!-- Fonts (needs internet; falls back to system fonts if offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+  <!-- Sets dark/light BEFORE the page paints, so there is no white flash. -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (dark ? 'dark' : 'light'));
+    })();
+  </script>
+</head>
+
+<body>
+
+<!-- HEADER / NAV — each link points at a section id below. -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">Gio Madrigal</a>
+
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#cv">cv</a>
+      <a href="#publications">publications</a>
+      <a href="#projects">projects</a>
+      <a href="#now">now</a>
+      <a href="#contact">contact</a>
+    </nav>
+
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode"></button>
+    <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="section hero-section">
+    <div class="container hero">
+      <div class="hero-text">
+        <!-- Photo lives at assets/images/headshot.jpg. If it is missing, this hides itself. -->
+        <img class="headshot" src="assets/images/headshot.jpg" alt="Portrait of Gio Madrigal" width="180" height="180" onerror="this.hidden=true">
+
+        <h1>Gio Madrigal, PhD</h1>
+        <p class="lede">Bioinformatician who designs and builds software to solve difficult problems in biological data analysis.</p>
+        <p class="muted">Postdoctoral Researcher at the <strong>University of Kansas</strong>, studying mito-nuclear interactions as a framework for understanding human mitochondrial disease.</p>
+
+        <div class="cta-group">
+          <a href="mailto:giovanni.madrigal12@yahoo.com" class="btn btn-primary">Email &rarr;</a>
+          <a href="https://github.com/Giov12" class="btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/gio-madrigal" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=OHUyeMAAAAAJ&hl=en" class="btn" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-label="Tools at a glance">
+        <p class="eyebrow">Toolbox</p>
+        <ul class="tiles">
+          <li>Python</li>
+          <li>C++</li>
+          <li>R</li>
+          <li>Bash</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <a href="#about" class="scroll-cue"><span class="line"></span><span>scroll for more &darr;</span><span class="line"></span></a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container two-col">
+      <div class="col-main">
+        <p class="eyebrow">About</p>
+        <h2>Overview</h2>
+        <div class="prose">
+          <p>I am a bioinformatician who designs and builds software for the analysis of large biological datasets. I recently completed my Ph.D. in Biology at the University of Illinois Urbana-Champaign, where I developed tools for evaluating long-read genome assemblies and characterizing genome architecture at scale. My training began at Texas A&amp;M University at Galveston, where I conducted phylogenomic research on tunas.</p>
+          <p>My doctoral work taught me what it takes to write good software: code that is fast, maintainable, and easy for other researchers to use. It also gave me the opportunity to work across a broad range of biological systems, including mammals, fishes, and plants, and across data types such as RNA-seq, whole-genome sequencing, RAD-seq, single-nucleus RNA-seq, and genome assemblies. The most important lesson from that breadth is that a good bioinformatician keeps biology at the forefront of every project. The software and the analysis exist to answer a biological question, not the other way around.</p>
+          <p>Key areas of expertise:</p>
+          <ul>
+            <li><strong>Genome assembly &amp; evaluation:</strong> long-read assembly integrity and sequence-motif detection (Klumpy).</li>
+            <li><strong>Comparative genomics:</strong> synteny-based characterization of genome architecture (Synolog).</li>
+            <li><strong>Population genomics:</strong> marker discovery, population structure, and eQTL mapping.</li>
+            <li><strong>Transcriptomics:</strong> single-cell and bulk RNA-seq analysis.</li>
+            <li><strong>Cloud &amp; HPC:</strong> AWS (EC2, S3, IAM) and Slurm.</li>
+          </ul>
+          <p>Along the way I have collaborated with 8 research groups across departments and universities on projects spanning single-cell RNA-seq, eQTL mapping, genome assembly, and population genomics.</p>
+        </div>
+      </div>
+
+      <aside class="col-side" aria-label="Highlights">
+        <h3 class="side-title">Highlights</h3>
+        <div class="stack">
+          <div class="stat"><div class="stat-value">Klumpy</div><div class="stat-label">Genome assembly integrity tool</div><div class="stat-note">Molecular Ecology Resources, 2025</div></div>
+          <div class="stat"><div class="stat-value">Synolog</div><div class="stat-label">Scalable C++ synteny framework</div><div class="stat-note">bioRxiv preprint, 2026</div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="section section-surface" id="cv">
+    <div class="container two-col">
+      <div class="col-main">
+        <p class="eyebrow">Curriculum Vitae</p>
+        <h2>Postdoctoral Researcher</h2>
+        <p class="subtitle">University of Kansas &middot; Ph.D. Biology, University of Illinois Urbana-Champaign</p>
+        <p><a class="btn" href="assets/docs/Gio-Madrigal-Resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a></p>
+
+        <h3>Experience</h3>
+
+        <div class="role">
+          <h4>Postdoctoral Researcher</h4>
+          <p class="mono">University of Kansas &middot; Lawrence, KS &middot; Sep 2026 &ndash; Present</p>
+          <ul class="prose">
+            <li>Applying whole-genome approaches to characterize mito-nuclear interactions in Evolutionary Mutant Models as a framework for understanding human mitochondrial disease.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <h4>Staff Scientist</h4>
+          <p class="mono">Frenzy Crop Systems Inc &middot; Champaign, IL &middot; May 2025 &ndash; May 2026</p>
+          <ul class="prose">
+            <li>Directed genomic marker discovery efforts for agronomically important traits in major crop species, leveraging whole-genome sequencing data.</li>
+            <li>Served as sole cloud administrator for the company AWS environment, establishing and maintaining EC2 compute instances, S3 storage for genomic data, and IAM user provisioning.</li>
+            <li>Developed custom bioinformatic tools and pipelines in Python, C++, and R to address analytical needs.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <h4>Graduate Research Assistant</h4>
+          <p class="mono">University of Illinois Urbana-Champaign &middot; Champaign, IL &middot; May 2021 &ndash; Aug 2026</p>
+          <ul class="prose">
+            <li>Developed Klumpy, a Python-based tool for evaluating long-read genome assembly integrity, featuring novel algorithms for detecting sequence motifs with minimal dependencies.</li>
+            <li>Developed Synolog, a scalable C++ framework for synteny-based genome architecture characterization, incorporating custom visualization modules and algorithms designed for large-scale comparative genomics.</li>
+            <li>Identified a candidate gene underlying phenotypic variation through population-level genomic marker discovery.</li>
+            <li>Collaborated with 8 research groups across multiple departments and universities on projects spanning single-cell RNA-seq, eQTL mapping, genome assembly, and population genomics.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <h4>Laboratory Technician</h4>
+          <p class="mono">University of Miami Rosenstiel School of Marine and Atmospheric Science &middot; Miami, FL &middot; Jan 2021 &ndash; May 2021</p>
+          <ul class="prose">
+            <li>Analyzed population structure and genetic diversity of an endangered species to support conservation management.</li>
+          </ul>
+        </div>
+
+        <h3>Education</h3>
+        <dl class="dl-grid">
+          <dt>2021&ndash;2026</dt>
+          <dd><strong>Ph.D., Biology</strong> &middot; University of Illinois Urbana-Champaign</dd>
+          <dt>2018&ndash;2020</dt>
+          <dd><strong>M.S., Marine Biology</strong> &middot; Texas A&amp;M University at Galveston</dd>
+          <dt>2013&ndash;2017</dt>
+          <dd><strong>B.S., Marine Biology and Marine Fisheries</strong> &middot; Texas A&amp;M University at Galveston</dd>
+        </dl>
+      </div>
+
+      <aside class="col-side" aria-label="Skills">
+        <h3 class="side-title">Skills</h3>
+        <div class="stack">
+          <div class="skill-group">
+            <h4>Languages</h4>
+            <div class="tags"><span class="tag highlight">Python</span><span class="tag highlight">C++</span><span class="tag">Bash</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">HTML/CSS</span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Developer Tools</h4>
+            <div class="tags"><span class="tag">Git</span><span class="tag">Conda</span><span class="tag">GDB</span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Cloud &amp; HPC</h4>
+            <div class="tags"><span class="tag highlight">AWS</span><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">IAM</span><span class="tag">Slurm</span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Computational Methods</h4>
+            <div class="tags"><span class="tag">Parallelization</span><span class="tag">Data visualization</span><span class="tag">Algorithm design</span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Genomics &amp; Transcriptomics</h4>
+            <div class="tags"><span class="tag">Genome assembly</span><span class="tag">Marker discovery</span><span class="tag">Single-cell RNA-seq</span><span class="tag">Bulk RNA-seq</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS — from Google Scholar. data-tag drives the filter buttons. -->
+  <section class="section" id="publications">
+    <div class="container">
+      <p class="eyebrow">Research</p>
+      <h2>Publications</h2>
+      <p class="muted">Software and applied genomics. The full list is on <a href="https://scholar.google.com/citations?user=OHUyeMAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+
+      <div class="filters" id="pubFilters" aria-label="Filter publications"></div>
+
+      <div class="cards" id="pubCards">
+        <article class="card" data-tag="Software">
+          <p class="card-meta">Software &middot; 2026 &middot; Preprint</p>
+          <h3><a href="https://doi.org/10.64898/2026.04.07.717040" target="_blank" rel="noopener">Synolog: A Scalable Synteny-Based Framework for Genome Architecture Characterization</a></h3>
+          <p class="muted"><strong>Madrigal G</strong>, Catchen JM. <em>bioRxiv</em>. Under review.</p>
+          <a class="card-link" href="https://doi.org/10.64898/2026.04.07.717040" target="_blank" rel="noopener">Read preprint &rarr;</a>
+        </article>
+
+        <article class="card" data-tag="Software">
+          <p class="card-meta">Software &middot; 2025</p>
+          <h3><a href="https://doi.org/10.1111/1755-0998.13982" target="_blank" rel="noopener">Klumpy: A tool to evaluate the integrity of long-read genome assemblies and illusive sequence motifs</a></h3>
+          <p class="muted"><strong>Madrigal G</strong>, Minhas BF, Catchen J. <em>Molecular Ecology Resources</em> 25(1): e13982.</p>
+          <a class="card-link" href="https://doi.org/10.1111/1755-0998.13982" target="_blank" rel="noopener">Read paper &rarr;</a>
+        </article>
+
+        <article class="card" data-tag="Applied Genomics">
+          <p class="card-meta">Applied Genomics &middot; 2026 &middot; Preprint</p>
+          <h3><a href="https://doi.org/10.64898/2026.09.04.749336" target="_blank" rel="noopener">Transcriptomic differences underlying fin sexual dichromatism and male color polymorphism in bluefin killifish (<em>Lucania goodei</em>)</a></h3>
+          <p class="muted">Karatgi R, Cheng CHC, <strong>Madrigal G</strong>, Catchen JM, Fuller RC. <em>bioRxiv</em>.</p>
+          <a class="card-link" href="https://doi.org/10.64898/2026.09.04.749336" target="_blank" rel="noopener">Read preprint &rarr;</a>
+        </article>
+
+        <article class="card" data-tag="Applied Genomics">
+          <p class="card-meta">Applied Genomics &middot; 2026</p>
+          <h3><a href="https://doi.org/10.1111/xen.70109" target="_blank" rel="noopener">Genomic validation of PERV-C-free pigs to support xenotransplantation</a></h3>
+          <p class="muted">Benjamin NR, <strong>Madrigal G</strong>, Ishida Y, Catchen J, Allen KL, Pepin B, Roca AL. <em>Xenotransplantation</em> 33(1): e70109.</p>
+          <a class="card-link" href="https://doi.org/10.1111/xen.70109" target="_blank" rel="noopener">Read paper &rarr;</a>
+        </article>
+
+        <article class="card" data-tag="Applied Genomics">
+          <p class="card-meta">Applied Genomics &middot; 2023</p>
+          <h3><a href="https://doi.org/10.1093/molbev/msad029" target="_blank" rel="noopener">Genomics of secondarily temperate adaptation in the only non-Antarctic icefish</a></h3>
+          <p class="muted">Rivera-Col&oacute;n AG, Rayamajhi N, Minhas BF, <strong>Madrigal G</strong>, et al. <em>Molecular Biology and Evolution</em> 40(3): msad029.</p>
+          <a class="card-link" href="https://doi.org/10.1093/molbev/msad029" target="_blank" rel="noopener">Read paper &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (from GitHub) -->
+  <section class="section section-surface" id="projects">
+    <div class="container">
+      <p class="eyebrow">Featured Work</p>
+      <h2>Projects</h2>
+      <p class="muted">Genomics software and analysis code. More on <a href="https://github.com/Giov12" target="_blank" rel="noopener">GitHub</a>.</p>
+
+      <div class="cards">
+        <article class="card">
+          <p class="card-meta">Python tool</p>
+          <h3>Klumpy</h3>
+          <p class="muted">Evaluates the integrity of long-read genome assemblies and detects illusive sequence motifs, with minimal dependencies.</p>
+          <a class="card-link" href="https://doi.org/10.1111/1755-0998.13982" target="_blank" rel="noopener">Read the paper &rarr;</a>
+        </article>
+        <article class="card">
+          <p class="card-meta">C++ framework</p>
+          <h3>Synolog</h3>
+          <p class="muted">A scalable framework for synteny-based genome architecture characterization, with custom visualization modules for large-scale comparative genomics.</p>
+          <a class="card-link" href="https://doi.org/10.64898/2026.04.07.717040" target="_blank" rel="noopener">Read the preprint &rarr;</a>
+        </article>
+        <article class="card">
+          <p class="card-meta">Analysis code</p>
+          <h3>PervC.Analysis</h3>
+          <p class="muted">Scripts for detecting PERV-C elements in pig genomes, used in the genomic validation of PERV-C-free pigs for xenotransplantation.</p>
+          <div class="card-links">
+            <a class="card-link" href="https://github.com/Giov12/PervC.Analysis" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+            <a class="card-link" href="https://doi.org/10.1111/xen.70109" target="_blank" rel="noopener">Read the paper &rarr;</a>
+          </div>
+        </article>
+        <article class="card">
+          <p class="card-meta">Analysis code</p>
+          <h3>gac_eqtl</h3>
+          <p class="muted">Scripts for detecting eQTLs between common and white stickleback.</p>
+          <a class="card-link" href="https://github.com/Giov12/gac_eqtl" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+        <article class="card">
+          <p class="card-meta">Analysis code</p>
+          <h3>gac.snRNA</h3>
+          <p class="muted">Scripts for characterizing single-nuclei brain data between common and white stickleback.</p>
+          <a class="card-link" href="https://github.com/Giov12/gac.snRNA" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+        <article class="card">
+          <p class="card-meta">Analysis code</p>
+          <h3>bat.genomics</h3>
+          <p class="muted">Scripts for examining genetic differences between pre- and post-white-nose-syndrome bat populations.</p>
+          <a class="card-link" href="https://github.com/Giov12/bat.genomics" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOW + CONTACT -->
+  <section class="section" id="now">
+    <div class="container two-col">
+      <div class="col-main">
+        <p class="eyebrow">September 2026</p>
+        <h2>Now</h2>
+        <p class="muted">What I am working on.</p>
+
+        <div class="card">
+          <p class="card-meta">University of Kansas</p>
+          <h3>Mito-nuclear interactions in Evolutionary Mutant Models</h3>
+          <p class="muted">Starting a postdoctoral position applying whole-genome approaches to understand how mitochondrial and nuclear genomes interact, as a framework for human mitochondrial disease.</p>
+          <p class="muted">Outside of software development, I am building a foundation in machine learning and keeping my practice notebooks on <a href="https://github.com/Giov12/intro.to.ml" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+
+        <div class="callout">
+          <h3>Want to connect?</h3>
+          <p class="muted">I welcome conversations about genomics, software, and collaborations.</p>
+          <div class="cta-group">
+            <a href="mailto:giovanni.madrigal12@yahoo.com" class="btn btn-primary">Email me</a>
+            <a href="https://www.linkedin.com/in/gio-madrigal" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Giov12" class="btn" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="col-side" id="contact" aria-label="Contact">
+        <h3 class="side-title">Get in touch</h3>
+        <div class="stack">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div><a href="mailto:giovanni.madrigal12@yahoo.com">giovanni.madrigal12@yahoo.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">LinkedIn</div>
+            <div><a href="https://www.linkedin.com/in/gio-madrigal" target="_blank" rel="noopener">gio-madrigal</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">GitHub</div>
+            <div><a href="https://github.com/Giov12" target="_blank" rel="noopener">Giov12</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Google Scholar</div>
+            <div><a href="https://scholar.google.com/citations?user=OHUyeMAAAAAJ&hl=en" target="_blank" rel="noopener">Gio Madrigal</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Resume</div>
+            <div><a href="assets/docs/Gio-Madrigal-Resume.pdf" target="_blank" rel="noopener">Download PDF</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div>Urbana, IL</div>
+            <div class="stat-note">Working remotely</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="#about">about</a>
+      <a href="#cv">cv</a>
+      <a href="#publications">publications</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+      <a href="https://github.com/Giov12" target="_blank" rel="noopener">github</a>
+    </div>
+    <p>&copy; <span id="year">2026</span> Gio Madrigal &middot; Static HTML &amp; CSS</p>
+    <!-- script.js replaces this date automatically with the time the site was last published.
+         The text below is only a fallback (offline / no JavaScript), so update it by hand occasionally. -->
+    <p class="last-updated">Last updated <span id="lastUpdated">September 26, 2026</span></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
